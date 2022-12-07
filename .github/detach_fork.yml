@@ -1,0 +1,28 @@
+name: Extract or Detach fork
+description: Extract or detach a fork.
+title: "I would like help with extracting/detaching this fork: "
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project. Are you looking to delete a fork or detach/extract a fork?  Extract - To move the fork and all its subforks into a new network. This repository becomes the new root. Detach - To create a new fork network containing only this repository. All of its sub-forks are re-parented and stay in the original fork network.
+  - type: dropdown
+    id: choice
+    attributes:
+      label: Delete or Extract/detach?
+      description: Do you want to delete or extract/detach your fork?
+      options:
+        - Delete
+        - Detach/extract
+    validations:
+      required: true
+  - type: input
+    id: owner
+    attributes:
+      label: Owner details
+      description: 'Please enter the owner/repository-name or the URL of the forked repository that you would like detached/extracted'
+      placeholder: ex. gaurav-ketkar/example_repo
+    validations:
+      required: true
